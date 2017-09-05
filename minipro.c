@@ -176,7 +176,7 @@ void minipro_write_fuses(minipro_handle_t *handle, unsigned int type, unsigned i
 	msg_init(msg, type, handle->device, handle->icsp);
 	msg[2]=(type==18 && length==4)?2:1;  // note that PICs with 1 config word will show length==2
 	memcpy(&(msg[7]), buf, length);
-	
+
 	msg_send(handle, msg, 18);
 	msg_recv(handle, msg, 7 + length);
 

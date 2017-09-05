@@ -550,7 +550,8 @@ int main(int argc, char **argv) {
         case 0x73:
           switch(device->variant) {
             case 0x10:
-                device->fuses = avr2_fuses;
+						case 0x12:
+                device->fuses = avr3_fuses;
                 break;
           }
           break;
